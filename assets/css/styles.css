@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #3a86ff;
-  --secondary-color: #8338ec;
-  --accent-color: #ff006e;
-  --dark-color: #1e2c3d;
+  --primary-color: #555555;
+  --secondary-color: #777777;
+  --accent-color: #999999;
+  --dark-color: #333333;
   --light-color: #f8f9fa;
   --gray-color: #6c757d;
-  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --gradient: linear-gradient(135deg, #555555, #888888);
   
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Roboto', sans-serif;
@@ -103,9 +103,9 @@ p {
 
 /* Header and Navigation */
 header {
-  padding: 20px 0;
-  background-color: white;
-  box-shadow: var(--shadow-sm);
+  padding: 35px 0;
+  background-color: var(--dark-color);
+  box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -119,8 +119,20 @@ nav {
 
 .logo {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.logo a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+header .logo-img {
+  margin: 5px 0;
+  max-height: 80px;
+  transform: scale(1.25);
+  transform-origin: left center;
+  margin-right: 0;
 }
 
 .logo h1 {
@@ -139,17 +151,26 @@ nav {
   display: flex;
   list-style: none;
   gap: 30px;
+  align-items: center;
+  height: 100%;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--dark-color);
+  color: white;
   font-weight: 500;
   transition: var(--transition);
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.nav-links .btn-primary {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger {
@@ -161,7 +182,7 @@ nav {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: var(--dark-color);
+  background-color: white;
   margin: 3px 0;
   border-radius: 3px;
 }
@@ -386,6 +407,12 @@ footer {
   font-size: 0.9rem;
 }
 
+.footer-logo-img {
+  max-height: 60px;
+  margin-bottom: 15px;
+  filter: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   h1 {
@@ -428,5 +455,212 @@ footer {
   .footer-links {
     flex-direction: column;
     gap: 30px;
+  }
+  
+  header .container {
+    padding: 0 15px;
+  }
+  
+  header .logo-img {
+    max-height: 45px;
+  }
+}
+
+/* Logo temporal basado en texto */
+.text-logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* Logo con CSS */
+.css-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.css-logo span {
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.logo-line {
+  width: 100%;
+  height: 2px;
+  background-color: #888;
+  margin: 3px 0;
+}
+
+.logo-tagline {
+  font-size: 0.8rem !important;
+  letter-spacing: 2px;
+  color: #999 !important;
+}
+
+/* Adaptación del logo CSS para el footer */
+.footer-css-logo {
+  margin-bottom: 20px;
+}
+
+.footer-css-logo span {
+  font-size: 1.8rem;
+}
+
+.footer-css-logo .logo-tagline {
+  font-size: 0.7rem !important;
+}
+
+/* Imagen de reemplazo para ai-agents.svg */
+.placeholder-image {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  background: var(--gradient);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.placeholder-content {
+  text-align: center;
+}
+
+.placeholder-content svg {
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  color: white;
+}
+
+.placeholder-content p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Estilos para el proceso de demanda judicial */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.process-step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.step-icon {
+  min-width: 56px;
+  height: 56px;
+  background-color: rgba(85, 85, 85, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.step-content p {
+  margin-bottom: 0;
+  color: var(--gray-color);
+}
+
+.process-conclusion {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: rgba(85, 85, 85, 0.05);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Diagrama de proceso */
+.process-diagram {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.diagram-node {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.start-node {
+  background: var(--primary-color);
+}
+
+.end-node {
+  background: var(--secondary-color);
+}
+
+.diagram-arrow {
+  width: 3px;
+  height: 30px;
+  background-color: var(--gray-color);
+  position: relative;
+}
+
+.diagram-arrow:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--gray-color);
+}
+
+@media (max-width: 768px) {
+  .process-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .step-icon {
+    margin-bottom: 1rem;
+  }
+  
+  .diagram-node {
+    width: 80px;
+    height: 80px;
   }
 } 
